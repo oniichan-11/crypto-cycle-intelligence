@@ -14,6 +14,11 @@ export const COINS = [
   { id:"artificial-superintelligence-alliance", sym:"FET", sector:"AI/DePIN" },
   { id:"helium",      sym:"HNT",  sector:"AI/DePIN" },
   { id:"bittensor",   sym:"TAO",  sector:"AI/DePIN" },
+  // Robinhood Chain ecosystem (chain has NO native token; these are the listed proxies)
+  { id:"robinhood-xstock", sym:"HOODX",  sector:"RH-Eco" },
+  { id:"chainlink",        sym:"LINK",   sector:"RH-Eco" },
+  { id:"ethena",           sym:"ENA",    sector:"RH-Eco" },
+  { id:"morpho",           sym:"MORPHO", sector:"RH-Eco" },
 ];
 
 // Sector → DefiLlama protocol slugs (for TVL/fees)
@@ -22,4 +27,4 @@ export const SECTOR_PROTOCOLS = {
   PerpDEX: ["gmx","dydx","hyperliquid"],
 };
 
-export const SECTOR_TABS = ["ALL","L1","L2","DeFi","PerpDEX","AI/DePIN"];
+export const SECTOR_TABS = ["ALL","L1","L2","DeFi","PerpDEX","AI/DePIN","RH-Eco"];

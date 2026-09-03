@@ -16,6 +16,19 @@ export async function fetchStablecoinTrend() {
   } catch { return null; }
 }
 
+// Robinhood Chain aggregate app fees (all protocols on the chain, per DefiLlama).
+// NOTE: this is NOT the chain's own sequencer revenue — it sums every listed
+// protocol's fees on the chain, so it reads higher than "chain fees" headlines.
+export async function fetchRhFees() {
+  try {
+    const r = await fetch(`${LLAMA}/overview/fees/robinhood-chain?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true`);
+    if (!r.ok) return null;
+    const d = await r.json();
+    if (d?.total24h == null) return null;
+    return { total24h: d.total24h, total7d: d.total7d ?? null };
+  } catch { return null; }
+}
+
 // Chain TVL + protocol TVL for tracked sectors.
 export async function fetchDefiIntel() {
   try {
@@ -23,7 +36,7 @@ export async function fetchDefiIntel() {
     const rc = await fetch(`${LLAMA}/v2/chains`);
     if (rc.ok) {
       const d = await rc.json();
-      out.chains = (d||[]).filter(c=>["Ethereum","Solana","Arbitrum","Base","BSC","Avalanche","OP Mainnet"].includes(c.name)).map(c=>({name:c.name,tvl:c.tvl})).sort((a,b)=>b.tvl-a.tvl);
+      out.chains = (d||[]).filter(c=>["Ethereum","Solana","Arbitrum","Base","BSC","Avalanche","OP Mainnet","Robinhood Chain"].includes(c.name)).map(c=>({name:c.name,tvl:c.tvl})).sort((a,b)=>b.tvl-a.tvl);
     }
     for (const [sec, slugs] of Object.entries(SECTOR_PROTOCOLS)) {
       out.protocols[sec] = [];

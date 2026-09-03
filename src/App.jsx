@@ -10,7 +10,7 @@ import { fetchFearGreed } from "./fetchers/alternative.js";
 import { fetchDifficulty } from "./fetchers/mempool.js";
 import { fetchOnChain, fetchHashRibbons, fetchAddressActivity, fetchExchangeFlows, fetchPriceHistory } from "./fetchers/coinmetrics.js";
 import { buildCycleOverlay } from "./lib/cycles.js";
-import { fetchStablecoinTrend, fetchDefiIntel } from "./fetchers/defillama.js";
+import { fetchStablecoinTrend, fetchDefiIntel, fetchRhFees } from "./fetchers/defillama.js";
 import { fetchFunding } from "./fetchers/okx.js";
 import { fetchSopr, fetchPuell } from "./fetchers/bgeometrics.js";
 import { fetchKeylessDxy, fetchCoinApiDxy } from "./fetchers/forex.js";
@@ -23,6 +23,7 @@ import Macro from "./panels/Macro.jsx";
 import Sectors from "./panels/Sectors.jsx";
 import Signals from "./panels/Signals.jsx";
 import Cycles from "./panels/Cycles.jsx";
+import RobinhoodEco from "./panels/RobinhoodEco.jsx";
 import ApiKeys from "./panels/ApiKeys.jsx";
 import Alerts from "./panels/Alerts.jsx";
 import Clock from "./components/Clock.jsx";
@@ -46,6 +47,7 @@ export default function App(){
   const [puell,setPuell]=useState(hyd?.puell??null);
   const [sopr,setSopr]=useState(hyd?.sopr??null);
   const [addr,setAddr]=useState(hyd?.addr??null);
+  const [rhFees,setRhFees]=useState(hyd?.rhFees??null);
   const [overlay,setOverlay]=useState(null);
   const [fredData,setFredData]=useState({});
   const [forex,setForex]=useState({});
@@ -74,14 +76,15 @@ export default function App(){
     if(mempoolR)setMempool(mempoolR);
 
     // Heavier computed signals in parallel — each fetcher degrades to null, never throws
-    const [onChainR,hashR,scTrend,flowsR,fundingR,defiR,keylessDxy,addrR]=await Promise.all([
-      fetchOnChain(),fetchHashRibbons(),fetchStablecoinTrend(),fetchExchangeFlows(),fetchFunding(),fetchDefiIntel(),fetchKeylessDxy(),fetchAddressActivity(),
+    const [onChainR,hashR,scTrend,flowsR,fundingR,defiR,keylessDxy,addrR,rhFeesR]=await Promise.all([
+      fetchOnChain(),fetchHashRibbons(),fetchStablecoinTrend(),fetchExchangeFlows(),fetchFunding(),fetchDefiIntel(),fetchKeylessDxy(),fetchAddressActivity(),fetchRhFees(),
     ]);
     if(onChainR)setOnChain(onChainR);
     if(hashR)setHashD(hashR);
     if(fundingR)setFunding(fundingR);
     if(defiR)setDefi(defiR);
     if(addrR)setAddr(addrR);
+    if(rhFeesR)setRhFees(rhFeesR);
     // Three-leg blend: stablecoin Δ (DefiLlama) + REAL exchange balance Δ + REAL net flow (CM free tier)
     // Merge with previous values so a single failed leg doesn't blank a working one
     setNetflow(prev=>({
@@ -126,7 +129,7 @@ export default function App(){
   // Persist the panel snapshot after every successful sync (hydration source)
   useEffect(()=>{
     if(!lastSync)return;
-    savePanelState({btc,global,fg,sector,mempool,onChain,hashD,funding,netflow,defi,puell,sopr,addr});
+    savePanelState({btc,global,fg,sector,mempool,onChain,hashD,funding,netflow,defi,puell,sopr,addr,rhFees});
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[lastSync]);
 
@@ -199,7 +202,7 @@ export default function App(){
   const handleClearAlerts=()=>{setAlerts([]);clearAlerts();};
   const latestAlert=alerts[0];
 
-  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
+  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
 
   if(loading)return(
     <div style={{background:"#060C18",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"monospace"}}>
@@ -270,6 +273,7 @@ export default function App(){
       {panel==="macro"&&<Macro dxyVal={dxyVal} dxyKeyless={dxyKeyless} dxyLive={dxyLive} fredDXY={fredDXY} forex={forex} fredKey={fredKey} setFredKey={setFredKey} fetchFRED={fetchFRED} fredBusy={fredBusy} fredData={fredData}/>}
       {panel==="sectors"&&<Sectors sector={sector} tab={tab} setTab={setTab} defi={defi} verd={verd}/>}
       {panel==="signals"&&<Signals onChain={onChain} mz={mz} nz={nz} sz={sz} hrInfo={hrInfo} nf={nf} fg={fg} funding={funding} fz={fz} dom={dom} athPct={athPct} dxyVal={dxyVal} dxySrc={dxySrc} fredData={fredData} ycVal={ycVal} verd={verd} sopr={sopr} puell={puell} pz={pz} addr={addr} az={az}/>}
+      {panel==="rheco"&&<RobinhoodEco sector={sector} defi={defi} rhFees={rhFees}/>}
       {panel==="cycles"&&<Cycles overlay={overlay} verd={verd}/>}
       {panel==="alerts"&&<Alerts alerts={alerts} onClear={handleClearAlerts}/>}
       {panel==="keys"&&<ApiKeys fredKey={fredKey} setFredKey={setFredKey} fetchFRED={fetchFRED} fredBusy={fredBusy} fredData={fredData} apiKey={apiKey} setApiKey={setApiKey} fetchCoinAPI={fetchCoinAPI} apiBusy={apiBusy} dxyLive={dxyLive} defi={defi} funding={funding} mempool={mempool} dxyKeyless={dxyKeyless}/>}
