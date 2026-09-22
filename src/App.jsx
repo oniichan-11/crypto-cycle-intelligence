@@ -13,6 +13,7 @@ import { buildCycleOverlay } from "./lib/cycles.js";
 import { fetchStablecoinTrend, fetchDefiIntel, fetchRhFees } from "./fetchers/defillama.js";
 import { fetchFunding } from "./fetchers/okx.js";
 import { fetchSopr, fetchPuell } from "./fetchers/bgeometrics.js";
+import { fetchScreenerResults } from "./fetchers/screener.js";
 import { fetchKeylessDxy, fetchCoinApiDxy } from "./fetchers/forex.js";
 import { fetchFredSeries } from "./fetchers/fred.js";
 
@@ -24,6 +25,7 @@ import Sectors from "./panels/Sectors.jsx";
 import Signals from "./panels/Signals.jsx";
 import Cycles from "./panels/Cycles.jsx";
 import RobinhoodEco from "./panels/RobinhoodEco.jsx";
+import Screener from "./panels/Screener.jsx";
 import ApiKeys from "./panels/ApiKeys.jsx";
 import Alerts from "./panels/Alerts.jsx";
 import Clock from "./components/Clock.jsx";
@@ -49,6 +51,8 @@ export default function App(){
   const [addr,setAddr]=useState(hyd?.addr??null);
   const [rhFees,setRhFees]=useState(hyd?.rhFees??null);
   const [overlay,setOverlay]=useState(null);
+  const [screenerData,setScreenerData]=useState(null);
+  const [screenerLoading,setScreenerLoading]=useState(false);
   const [fredData,setFredData]=useState({});
   const [forex,setForex]=useState({});
   const [dxyLive,setDxyLive]=useState(null);
@@ -141,6 +145,21 @@ export default function App(){
     })();
   },[]);
 
+  // Revenue screener: DefiLlama protocols+fees+revenue join, several MB, so it
+  // runs on its own hourly check (the fetcher itself no-ops if its 2h cache is
+  // still fresh) — never the dashboard's 120s loop.
+  const runScreener=useCallback(async(opts={})=>{
+    setScreenerLoading(true);
+    const res=await fetchScreenerResults(opts);
+    if(res)setScreenerData(res);
+    setScreenerLoading(false);
+  },[]);
+  useEffect(()=>{
+    runScreener();
+    const t=setInterval(()=>runScreener(),3600000);
+    return()=>clearInterval(t);
+  },[runScreener]);
+
   const fetchFRED=async()=>{
     if(!fredKey.trim())return;
     setFredBusy(true);
@@ -202,7 +221,7 @@ export default function App(){
   const handleClearAlerts=()=>{setAlerts([]);clearAlerts();};
   const latestAlert=alerts[0];
 
-  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
+  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"screener",l:"Screener"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
 
   if(loading)return(
     <div style={{background:"#060C18",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"monospace"}}>
@@ -274,6 +293,7 @@ export default function App(){
       {panel==="sectors"&&<Sectors sector={sector} tab={tab} setTab={setTab} defi={defi} verd={verd}/>}
       {panel==="signals"&&<Signals onChain={onChain} mz={mz} nz={nz} sz={sz} hrInfo={hrInfo} nf={nf} fg={fg} funding={funding} fz={fz} dom={dom} athPct={athPct} dxyVal={dxyVal} dxySrc={dxySrc} fredData={fredData} ycVal={ycVal} verd={verd} sopr={sopr} puell={puell} pz={pz} addr={addr} az={az}/>}
       {panel==="rheco"&&<RobinhoodEco sector={sector} defi={defi} rhFees={rhFees}/>}
+      {panel==="screener"&&<Screener data={screenerData} loading={screenerLoading} onRefresh={()=>runScreener({force:true})}/>}
       {panel==="cycles"&&<Cycles overlay={overlay} verd={verd}/>}
       {panel==="alerts"&&<Alerts alerts={alerts} onClear={handleClearAlerts}/>}
       {panel==="keys"&&<ApiKeys fredKey={fredKey} setFredKey={setFredKey} fetchFRED={fetchFRED} fredBusy={fredBusy} fredData={fredData} apiKey={apiKey} setApiKey={setApiKey} fetchCoinAPI={fetchCoinAPI} apiBusy={apiBusy} dxyLive={dxyLive} defi={defi} funding={funding} mempool={mempool} dxyKeyless={dxyKeyless}/>}
