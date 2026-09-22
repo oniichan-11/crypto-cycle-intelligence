@@ -224,48 +224,48 @@ export default function App(){
   const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"screener",l:"Screener"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
 
   if(loading)return(
-    <div style={{background:"#060C18",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"monospace"}}>
+    <div style={{background:"#F4F6FB",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"inherit"}}>
       <div style={{textAlign:"center"}}>
-        <div style={{fontSize:36,color:"#F7931A",marginBottom:16}}>◈</div>
-        <div style={{color:"#F7931A",fontSize:11,letterSpacing:4}}>INITIALIZING INTELLIGENCE LAYER</div>
-        <div style={{color:"#2E4060",fontSize:8,marginTop:8,letterSpacing:2}}>COINGECKO · COINMETRICS · DEFILLAMA · BINANCE · ECB</div>
-        <div style={{color:"#1A2840",fontSize:8,marginTop:4,letterSpacing:2}}>Computing on-chain, funding, netflow & sector signals...</div>
+        <div style={{fontSize:40,color:"#F7931A",marginBottom:18}}>◈</div>
+        <div style={{color:"#F7931A",fontSize:15,fontWeight:700,letterSpacing:1.5}}>INITIALIZING INTELLIGENCE LAYER</div>
+        <div style={{color:"#6B7484",fontSize:12,marginTop:10,letterSpacing:0.6}}>COINGECKO · COINMETRICS · DEFILLAMA · BINANCE · ECB</div>
+        <div style={{color:"#B4BAC6",fontSize:12,marginTop:5,letterSpacing:0.3}}>Computing on-chain, funding, netflow & sector signals...</div>
       </div>
     </div>
   );
 
   return(
-    <div style={{background:"#060C18",minHeight:"100vh",padding:"14px 14px 32px",fontFamily:"monospace",color:"#9BB8D8"}}>
+    <div style={{background:"#F4F6FB",minHeight:"100vh",padding:"14px 14px 32px",fontFamily:"inherit",color:"#171B24"}}>
       {/* Header */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12}}>
         <div>
-          <div style={{fontSize:18,fontWeight:700,color:"#F7931A",letterSpacing:1}}>◈ CRYPTO CYCLE INTELLIGENCE</div>
-          <div style={{color:"#2E4060",fontSize:7,letterSpacing:3,marginTop:2}}>RESEARCH & INVESTMENT AGENT — v0.5 · TRUE NETFLOW + ALERTS + CYCLE OVERLAY</div>
+          <div style={{fontSize:21,fontWeight:700,color:"#F7931A",letterSpacing:1}}>◈ CRYPTO CYCLE INTELLIGENCE</div>
+          <div style={{color:"#6B7484",fontSize:11,letterSpacing:0.6,marginTop:3,fontWeight:500}}>RESEARCH & INVESTMENT AGENT — v0.5 · TRUE NETFLOW + ALERTS + CYCLE OVERLAY</div>
         </div>
         <div style={{textAlign:"right"}}>
-          <div style={{fontSize:13,fontWeight:700,color:"#9BB8D8"}}><Clock/></div>
-          <div style={{color:"#2E4060",fontSize:7,marginTop:2}}>{lastSync?`SYNC ${lastSync.toLocaleTimeString("en-US",{hour12:false})}`:""}</div>
-          <div style={{display:"flex",alignItems:"center",gap:5,justifyContent:"flex-end",marginTop:4}}>
-            <div style={{width:5,height:5,borderRadius:"50%",background:"#00C97A"}}/>
-            <span style={{color:"#00C97A",fontSize:7,letterSpacing:2}}>LIVE — 120s REFRESH</span>
+          <div style={{fontSize:17,fontWeight:700,color:"#171B24"}}><Clock/></div>
+          <div style={{color:"#6B7484",fontSize:11,marginTop:2}}>{lastSync?`Synced ${lastSync.toLocaleTimeString("en-US",{hour12:false})}`:""}</div>
+          <div style={{display:"flex",alignItems:"center",gap:6,justifyContent:"flex-end",marginTop:5}}>
+            <div style={{width:6,height:6,borderRadius:"50%",background:"#17A257",boxShadow:"0 0 0 3px #17A25722"}}/>
+            <span style={{color:"#17A257",fontSize:11,fontWeight:600,letterSpacing:0.4}}>LIVE · 120s REFRESH</span>
           </div>
         </div>
       </div>
 
       {/* Nav */}
-      <div style={{display:"flex",gap:4,marginBottom:12,flexWrap:"wrap"}}>
-        {NAV.map(n=><button key={n.id} onClick={()=>setPanel(n.id)} style={{background:panel===n.id?"#F7931A":"#0C1525",color:panel===n.id?"#060C18":"#526880",border:`1px solid ${panel===n.id?"#F7931A":"#182035"}`,borderRadius:4,padding:"5px 14px",fontSize:9,fontFamily:"monospace",fontWeight:700,cursor:"pointer",letterSpacing:1.5}}>{n.l}</button>)}
+      <div style={{display:"flex",gap:6,marginBottom:14,flexWrap:"wrap",padding:"5px",background:"#EBEEF4",borderRadius:14,width:"fit-content"}}>
+        {NAV.map(n=><button key={n.id} onClick={()=>setPanel(n.id)} style={{background:panel===n.id?"#FFFFFF":"transparent",color:panel===n.id?"#171B24":"#5B6472",border:"none",borderRadius:10,padding:"7px 15px",fontSize:13,fontFamily:"inherit",fontWeight:600,cursor:"pointer",letterSpacing:0.1,boxShadow:panel===n.id?"0 1px 3px rgba(23,27,36,0.10)":"none",transition:"background 0.15s, color 0.15s"}}>{n.l}</button>)}
       </div>
 
       {/* Verdict banner */}
-      <div style={{background:`linear-gradient(135deg,${verd.col}0E 0%,#0C1525 70%)`,border:`1px solid ${verd.col}44`,borderRadius:10,padding:"14px 18px",marginBottom:12}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12}}>
-          <div style={{flex:1,minWidth:220}}>
-            <div style={{color:"#2E4060",fontSize:7,letterSpacing:3,marginBottom:5}}>SYNTHESIZED CYCLE VERDICT · {verd.active} SIGNALS ACTIVE</div>
-            <div style={{fontSize:20,fontWeight:700,color:verd.col}}>{verd.phase}</div>
-            <div style={{color:"#526880",fontSize:8,marginTop:5,maxWidth:520,lineHeight:1.65}}>{verd.desc}</div>
+      <div style={{background:`linear-gradient(120deg,${verd.col}0F 0%,#FFFFFF 55%)`,border:`1px solid ${verd.col}30`,borderRadius:14,padding:"20px 22px",marginBottom:14,boxShadow:"0 1px 3px rgba(23,27,36,0.05)"}}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:20}}>
+          <div style={{flex:1,minWidth:240}}>
+            <div style={{color:"#6B7484",fontSize:11,fontWeight:600,letterSpacing:0.8,marginBottom:7}}>SYNTHESIZED CYCLE VERDICT · {verd.active} SIGNALS ACTIVE</div>
+            <div style={{fontSize:26,fontWeight:800,color:verd.col,letterSpacing:-0.3}}>{verd.phase}</div>
+            <div style={{color:"#55606E",fontSize:13,marginTop:6,maxWidth:540,lineHeight:1.65}}>{verd.desc}</div>
           </div>
-          <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
+          <div style={{display:"flex",gap:22,flexWrap:"wrap"}}>
             {[
               {l:"POSITIONING",v:verd.risk,c:verd.col},
               {l:"MVRV-Z",v:onChain?.mvrvZ!=null?onChain.mvrvZ.toFixed(2):"—",c:mz.col},
@@ -274,14 +274,14 @@ export default function App(){
               {l:"FUNDING",v:funding?.aggregate!=null?`${funding.aggregate.toFixed(3)}%`:"—",c:fz.col},
               {l:"NETFLOW",v:nf.composite!=null?(nf.composite>0?"INFLOW":"OUTFLOW"):"—",c:nf.col},
               {l:"BTC DOM",v:dom?`${dom.toFixed(1)}%`:"—",c:"#F7931A"},
-            ].map(m=><div key={m.l} style={{textAlign:"center"}}><div style={{color:"#2E4060",fontSize:6,letterSpacing:1.5,marginBottom:3}}>{m.l}</div><div style={{color:m.c,fontSize:12,fontWeight:700,fontFamily:"monospace"}}>{m.v}</div></div>)}
+            ].map(m=><div key={m.l} style={{textAlign:"center"}}><div style={{color:"#6B7484",fontSize:10,fontWeight:600,letterSpacing:0.6,marginBottom:4}}>{m.l}</div><div style={{color:m.c,fontSize:17,fontWeight:700}}>{m.v}</div></div>)}
           </div>
         </div>
         {latestAlert&&(
-          <div onClick={()=>setPanel("alerts")} style={{marginTop:10,padding:"6px 10px",background:"#080E1C",borderRadius:5,border:"1px solid #182035",display:"flex",alignItems:"center",gap:8,cursor:"pointer"}}>
-            <span style={{color:latestAlert.sev==="critical"?"#FF4455":latestAlert.sev==="warning"?"#FF8C42":"#7DEFA1",fontSize:8,fontWeight:700,letterSpacing:1.5}}>⚡ LATEST ALERT</span>
-            <span style={{color:"#7A98B8",fontSize:8,flex:1}}>{latestAlert.msg}</span>
-            <span style={{color:"#2E4060",fontSize:7}}>{new Date(latestAlert.ts).toLocaleString("en-US",{hour12:false})}</span>
+          <div onClick={()=>setPanel("alerts")} style={{marginTop:14,padding:"9px 12px",background:"#FFFFFFB3",borderRadius:9,border:"1px solid #E4E8F0",display:"flex",alignItems:"center",gap:9,cursor:"pointer"}}>
+            <span style={{color:latestAlert.sev==="critical"?"#E23A4E":latestAlert.sev==="warning"?"#D9720F":"#2E9E5B",fontSize:12,fontWeight:700,letterSpacing:0.3}}>⚡ LATEST ALERT</span>
+            <span style={{color:"#55606E",fontSize:12,flex:1}}>{latestAlert.msg}</span>
+            <span style={{color:"#6B7484",fontSize:11}}>{new Date(latestAlert.ts).toLocaleString("en-US",{hour12:false})}</span>
           </div>
         )}
       </div>
@@ -298,7 +298,7 @@ export default function App(){
       {panel==="alerts"&&<Alerts alerts={alerts} onClear={handleClearAlerts}/>}
       {panel==="keys"&&<ApiKeys fredKey={fredKey} setFredKey={setFredKey} fetchFRED={fetchFRED} fredBusy={fredBusy} fredData={fredData} apiKey={apiKey} setApiKey={setApiKey} fetchCoinAPI={fetchCoinAPI} apiBusy={apiBusy} dxyLive={dxyLive} defi={defi} funding={funding} mempool={mempool} dxyKeyless={dxyKeyless}/>}
 
-      <div style={{color:"#182035",fontSize:7,textAlign:"center",marginTop:18,letterSpacing:2}}>CRYPTO CYCLE INTELLIGENCE v0.5 — 100% FREE DATA STACK — FOR RESEARCH ONLY — NOT FINANCIAL ADVICE</div>
+      <div style={{color:"#6B7484",fontSize:11,textAlign:"center",marginTop:22,letterSpacing:0.5,fontWeight:500}}>CRYPTO CYCLE INTELLIGENCE v0.5 — 100% FREE DATA STACK — FOR RESEARCH ONLY — NOT FINANCIAL ADVICE</div>
     </div>
   );
 }

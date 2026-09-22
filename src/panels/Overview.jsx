@@ -9,8 +9,8 @@ export default function Overview({btc,global,fg,mempool,onChain,netflow,dxyVal,d
     <>
       <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,marginBottom:10}}>
         <Card title="BTC / USD — CoinGecko">
-          <div style={{fontSize:20,fontWeight:700,color:"#F7931A",marginBottom:6}}>{btc?`$${fmt(btc.market_data.current_price.usd,0)}`:"—"}</div>
-          <div style={{display:"flex",gap:10,marginBottom:10}}>{[{l:"24H",v:btc?.market_data?.price_change_percentage_24h},{l:"7D",v:p7d},{l:"30D",v:p30d}].map(p=><div key={p.l}><div style={{color:"#2E4060",fontSize:7}}>{p.l}</div><div style={{color:pCol(p.v),fontSize:10,fontWeight:700}}>{fmtPct(p.v)}</div></div>)}</div>
+          <div style={{fontSize:23,fontWeight:700,color:"#F7931A",marginBottom:6}}>{btc?`$${fmt(btc.market_data.current_price.usd,0)}`:"—"}</div>
+          <div style={{display:"flex",gap:10,marginBottom:10}}>{[{l:"24H",v:btc?.market_data?.price_change_percentage_24h},{l:"7D",v:p7d},{l:"30D",v:p30d}].map(p=><div key={p.l}><div style={{color:"#6B7686",fontSize:11}}>{p.l}</div><div style={{color:pCol(p.v),fontSize:14,fontWeight:700}}>{fmtPct(p.v)}</div></div>)}</div>
           <StatRow label="MARKET CAP" value={btc?fmtBig(btc.market_data.market_cap.usd):"—"}/>
           <StatRow label="REALIZED CAP" value={onChain?fmtBig(onChain.realCap):"—"} sub="CoinMetrics"/>
           <StatRow label="24H VOLUME" value={btc?fmtBig(btc.market_data.total_volume.usd):"—"}/>
@@ -25,8 +25,8 @@ export default function Overview({btc,global,fg,mempool,onChain,netflow,dxyVal,d
           </div>
         </Card>
         <Card title="Global Market — CoinGecko">
-          <div style={{fontSize:18,fontWeight:700,color:"#9BB8D8",marginBottom:4}}>{global?fmtBig(global.total_market_cap.usd):"—"}</div>
-          <div style={{color:pCol(global?.market_cap_change_percentage_24h_usd),fontSize:10,fontWeight:700,marginBottom:10}}>{fmtPct(global?.market_cap_change_percentage_24h_usd)} (24H)</div>
+          <div style={{fontSize:21,fontWeight:700,color:"#171B24",marginBottom:4}}>{global?fmtBig(global.total_market_cap.usd):"—"}</div>
+          <div style={{color:pCol(global?.market_cap_change_percentage_24h_usd),fontSize:14,fontWeight:700,marginBottom:10}}>{fmtPct(global?.market_cap_change_percentage_24h_usd)} (24H)</div>
           <StatRow label="BTC DOMINANCE" value={dom?`${dom.toFixed(1)}%`:"—"} col="#F7931A"/>
           <StatRow label="ETH DOMINANCE" value={global?.market_cap_percentage?.eth?`${global.market_cap_percentage.eth.toFixed(1)}%`:"—"}/>
           <StatRow label="STABLE MCAP" value={netflow?.scNow?fmtBig(netflow.scNow):"—"} sub="DefiLlama"/>
@@ -35,26 +35,26 @@ export default function Overview({btc,global,fg,mempool,onChain,netflow,dxyVal,d
         <Card title="BTC Network — Mempool.space">
           {mempool?(<>
             <div style={{marginBottom:10}}>
-              <div style={{color:"#2E4060",fontSize:7,letterSpacing:2,marginBottom:4}}>DIFFICULTY EPOCH</div>
-              <div style={{background:"#080E1C",borderRadius:3,height:5,overflow:"hidden"}}><div style={{background:"#F7931A",height:"100%",width:`${(mempool.progressPercent||0).toFixed(1)}%`,borderRadius:3}}/></div>
-              <div style={{color:"#F7931A",fontSize:9,fontWeight:700,marginTop:3}}>{(mempool.progressPercent||0).toFixed(1)}%</div>
+              <div style={{color:"#6B7686",fontSize:11,letterSpacing:2,marginBottom:4}}>DIFFICULTY EPOCH</div>
+              <div style={{background:"#F3F5F9",borderRadius:3,height:5,overflow:"hidden"}}><div style={{background:"#F7931A",height:"100%",width:`${(mempool.progressPercent||0).toFixed(1)}%`,borderRadius:3}}/></div>
+              <div style={{color:"#F7931A",fontSize:13,fontWeight:700,marginTop:3}}>{(mempool.progressPercent||0).toFixed(1)}%</div>
             </div>
             <StatRow label="DIFF CHANGE" value={mempool.difficultyChange!=null?fmtPct(mempool.difficultyChange):"—"} col={pCol(mempool.difficultyChange)}/>
             <StatRow label="HASH RIBBON" value={hrInfo.diff!=null?`${hrInfo.diff>0?"+":""}${hrInfo.diff.toFixed(1)}%`:"—"} col={hrInfo.col}/>
             {/* mempool.space remainingTime is in ms (pre-existing bug in the artifact divided by 86400) */}
             <StatRow label="RETARGET IN" value={mempool.remainingTime?`${(mempool.remainingTime/86400000).toFixed(1)}d`:"—"}/>
-          </>):<div style={{color:"#2E4060",fontSize:9}}>Connecting...</div>}
+          </>):<div style={{color:"#6B7686",fontSize:13}}>Connecting...</div>}
         </Card>
       </div>
       <Card title="Fear & Greed — 14-Day History">
         <ResponsiveContainer width="100%" height={130}>
           <AreaChart data={fgChart} margin={{top:6,right:4,bottom:0,left:-24}}>
             <defs><linearGradient id="fgg" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#F7931A" stopOpacity={0.25}/><stop offset="95%" stopColor="#F7931A" stopOpacity={0}/></linearGradient></defs>
-            <XAxis dataKey="date" tick={{fill:"#2E4060",fontSize:7}} tickLine={false} axisLine={false} interval={2}/>
-            <YAxis domain={[0,100]} tick={{fill:"#2E4060",fontSize:7}} tickLine={false} axisLine={false}/>
-            <Tooltip contentStyle={{background:"#0C1525",border:"1px solid #182035",borderRadius:4,fontSize:9}} labelStyle={{color:"#526880"}} itemStyle={{color:"#F7931A"}} formatter={v=>[v,"Score"]}/>
-            <ReferenceLine y={25} stroke="#FF4455" strokeDasharray="2 4" strokeOpacity={0.4}/>
-            <ReferenceLine y={75} stroke="#00C97A" strokeDasharray="2 4" strokeOpacity={0.4}/>
+            <XAxis dataKey="date" tick={{fill:"#6B7686",fontSize:11}} tickLine={false} axisLine={false} interval={2}/>
+            <YAxis domain={[0,100]} tick={{fill:"#6B7686",fontSize:11}} tickLine={false} axisLine={false}/>
+            <Tooltip contentStyle={{background:"#FFFFFF",border:"1px solid #E4E8F0",borderRadius:8,fontSize:13}} labelStyle={{color:"#55606E"}} itemStyle={{color:"#F7931A"}} formatter={v=>[v,"Score"]}/>
+            <ReferenceLine y={25} stroke="#E23A4E" strokeDasharray="2 4" strokeOpacity={0.4}/>
+            <ReferenceLine y={75} stroke="#17A257" strokeDasharray="2 4" strokeOpacity={0.4}/>
             <Area type="monotone" dataKey="v" stroke="#F7931A" fill="url(#fgg)" strokeWidth={2} dot={false}/>
           </AreaChart>
         </ResponsiveContainer>
