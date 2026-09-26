@@ -1,8 +1,30 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-26T12:15:00Z",
+  "lastCapturedAt": "2026-09-26T12:51:00Z",
   "entries": [
+    {
+      "id": "2026-09-26-rh-gov-connections",
+      "capturedAt": "2026-09-26T12:51:00Z",
+      "tickers": ["PONS", "MEME", "AI"],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "Thread arguing Robinhood has deep ties to senior US government circles (Digital Assets Summit, Invest America roundtable, the GENIUS Act), posted alongside three Robinhood-chain tokenized assets: $MEME, $AI (Artificial Inu), $PONS. Narrative-only — no new hard evidence, but worth watching given the dashboard already tracks RH Chain directly.",
+      "sources": [
+        {"handle": "@Ricebtc", "url": "https://x.com/Ricebtc/status/2103808170867249219"},
+        {"handle": "@gkisokay", "url": "https://x.com/gkisokay"}
+      ]
+    },
+    {
+      "id": "2026-09-26-btc-shielded-tx-claim",
+      "capturedAt": "2026-09-26T12:51:00Z",
+      "tickers": ["BTC"],
+      "theme": "Notable claim — unverified",
+      "summary": "High-engagement claim (872 likes, 136 reposts, ~47K views) that a first-ever shielded/private Bitcoin transaction was sent on mainnet with no soft fork required, framed by posters as making Zcash \"irrelevant.\" Sourced to a single proof-of-concept repo (Bitsaga) — a real technical claim, not a price call, but unverified by anyone outside that repo's own announcement. Worth independent confirmation before treating as fact.",
+      "sources": [
+        {"handle": "@pete_rizzo_", "url": "https://x.com/pete_rizzo_/status/2103552615086735708"},
+        {"handle": "@BitsagaRob", "url": "https://x.com/BitsagaRob/status/2103475130621964733"}
+      ]
+    },
     {
       "id": "2026-09-26-npc-ath",
       "capturedAt": "2026-09-26T12:15:00Z",

@@ -7,11 +7,12 @@ const THEME_COL = {
   "Momentum / new ATH": "#17A257",
   "Ecosystem thesis": "#2E9E5B",
   "Bull thesis": "#2E9E5B",
+  "Narrative / RH Chain ecosystem": "#2E9E5B",
   "Macro tangent": "#D9720F",
   "Chart setup": "#8A6100",
   "Bare mention": "#6B7484",
 };
-const cautionTheme = t => /treat with caution/i.test(t || "");
+const cautionTheme = t => /treat with caution|unverified/i.test(t || "");
 
 function timeAgo(iso) {
   const ms = Date.now() - new Date(iso).getTime();
