@@ -26,6 +26,7 @@ import Signals from "./panels/Signals.jsx";
 import Cycles from "./panels/Cycles.jsx";
 import RobinhoodEco from "./panels/RobinhoodEco.jsx";
 import Screener from "./panels/Screener.jsx";
+import NewsFlash from "./panels/NewsFlash.jsx";
 import ApiKeys from "./panels/ApiKeys.jsx";
 import Alerts from "./panels/Alerts.jsx";
 import Clock from "./components/Clock.jsx";
@@ -221,7 +222,7 @@ export default function App(){
   const handleClearAlerts=()=>{setAlerts([]);clearAlerts();};
   const latestAlert=alerts[0];
 
-  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"screener",l:"Screener"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
+  const NAV=[{id:"overview",l:"Overview"},{id:"onchain",l:"On-Chain"},{id:"derivs",l:"Derivatives"},{id:"macro",l:"Macro/DXY"},{id:"sectors",l:"Sectors/DeFi"},{id:"rheco",l:"RH Chain"},{id:"screener",l:"Screener"},{id:"newsflash",l:"NewsFlash"},{id:"cycles",l:"Cycles"},{id:"signals",l:"Signals"},{id:"alerts",l:`Alerts${alerts.length?` (${alerts.length})`:""}`},{id:"keys",l:"API Keys"}];
 
   if(loading)return(
     <div style={{background:"#F4F6FB",minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"inherit"}}>
@@ -294,6 +295,7 @@ export default function App(){
       {panel==="signals"&&<Signals onChain={onChain} mz={mz} nz={nz} sz={sz} hrInfo={hrInfo} nf={nf} fg={fg} funding={funding} fz={fz} dom={dom} athPct={athPct} dxyVal={dxyVal} dxySrc={dxySrc} fredData={fredData} ycVal={ycVal} verd={verd} sopr={sopr} puell={puell} pz={pz} addr={addr} az={az}/>}
       {panel==="rheco"&&<RobinhoodEco sector={sector} defi={defi} rhFees={rhFees}/>}
       {panel==="screener"&&<Screener data={screenerData} loading={screenerLoading} onRefresh={()=>runScreener({force:true})}/>}
+      {panel==="newsflash"&&<NewsFlash sector={sector} screenerData={screenerData}/>}
       {panel==="cycles"&&<Cycles overlay={overlay} verd={verd}/>}
       {panel==="alerts"&&<Alerts alerts={alerts} onClear={handleClearAlerts}/>}
       {panel==="keys"&&<ApiKeys fredKey={fredKey} setFredKey={setFredKey} fetchFRED={fetchFRED} fredBusy={fredBusy} fredData={fredData} apiKey={apiKey} setApiKey={setApiKey} fetchCoinAPI={fetchCoinAPI} apiBusy={apiBusy} dxyLive={dxyLive} defi={defi} funding={funding} mempool={mempool} dxyKeyless={dxyKeyless}/>}

@@ -7,9 +7,11 @@ import { SCREENER } from "../config/screener.js";
 //   /overview/fees                      → total fees (24h/7d/30d)
 //   /overview/fees?dataType=dailyRevenue → protocol's own cut of those fees
 // "Revenue" ≠ "fees": fees are what users pay, revenue is what the protocol/
-// token actually captures — DefiLlama computes both, so we surface both rather
-// than conflating them. A protocol qualifies if EITHER crosses the config
-// floor over 30d, inside the user's market-cap band (config/screener.js).
+// token actually captures — DefiLlama computes both, so we surface both, but
+// qualification is on REVENUE specifically (config/screener.js): a protocol
+// must clear a 7d floor AND a 30d floor, so a single old spike that already
+// faded doesn't qualify on its own. No market-cap filter — any size, and
+// protocols with no token/mcap (lending markets, staking products) count too.
 //
 // NOTE ON 90D: DefiLlama's free overview endpoints expose 24h/7d/30d/1y totals
 // but no 90d bucket — there is no free way to get a reliable 90d figure without
@@ -55,25 +57,25 @@ export async function fetchScreenerResults({ force = false } = {}) {
 
     const rows = [];
     for (const p of protocols) {
-      if (!p.slug || p.mcap == null) continue;
-      if (p.mcap < SCREENER.mcapMin || p.mcap > SCREENER.mcapMax) continue;
-      const f = feesBySlug.get(p.slug);
+      if (!p.slug) continue;
       const r = revBySlug.get(p.slug);
-      const fees7d = f?.total7d ?? null, fees30d = f?.total30d ?? null;
       const rev7d = r?.total7d ?? null, rev30d = r?.total30d ?? null;
-      const passes = (rev30d != null && rev30d >= SCREENER.minRev30d) || (fees30d != null && fees30d >= SCREENER.minFees30d);
+      const passes = rev7d != null && rev7d >= SCREENER.minRev7d && rev30d != null && rev30d >= SCREENER.minRev30d;
       if (!passes) continue;
+      const f = feesBySlug.get(p.slug);
+      const fees7d = f?.total7d ?? null, fees30d = f?.total30d ?? null;
       rows.push({
         slug: p.slug, name: p.name, symbol: p.symbol, category: p.category || "—",
-        chains: p.chains || [], mcap: p.mcap, tvl: p.tvl, tvlChg7d: p.change_7d ?? null,
+        chains: p.chains || [], mcap: p.mcap ?? null, tvl: p.tvl, tvlChg7d: p.change_7d ?? null,
         fees7d, fees30d, rev7d, rev30d,
         // Annualized mcap/fees & mcap/revenue — a P/S-style ratio (30d × 12 as a rough annualizer).
         // Purely descriptive: lower = more revenue captured per dollar of market cap. Not a target.
-        mcapToFeesAnn: fees30d ? p.mcap / (fees30d * 12) : null,
-        mcapToRevAnn: rev30d ? p.mcap / (rev30d * 12) : null,
+        // Null when the protocol has no token/market cap (lending markets, staking products, etc.)
+        mcapToFeesAnn: p.mcap && fees30d ? p.mcap / (fees30d * 12) : null,
+        mcapToRevAnn: p.mcap && rev30d ? p.mcap / (rev30d * 12) : null,
       });
     }
-    rows.sort((a, b) => (b.fees30d ?? 0) - (a.fees30d ?? 0));
+    rows.sort((a, b) => (b.rev30d ?? 0) - (a.rev30d ?? 0));
     const trimmed = rows.slice(0, SCREENER.maxRows);
 
     // Chain-level fee ranking from breakdown30d ({chainKey: {protocolName: fees}}),

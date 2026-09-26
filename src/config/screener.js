@@ -1,14 +1,14 @@
-// ─── REVENUE SCREENER CRITERIA (user-defined, 2026-09-22) ────────────────────
-// Focus: revenue-generating dapps/chains/protocols with reliable quantitative
-// evidence (DefiLlama fees + revenue + TVL), not speculative narrative plays.
-// Market-cap band is the user's own sizing thesis — assets small enough that a
-// 5x move is structurally plausible, not a return this tool projects or implies.
-// Every value here is tunable; the panel always reflects whatever is active.
+// ─── REVENUE SCREENER CRITERIA (user-defined, 2026-09-26) ────────────────────
+// Focus: ANY revenue-generating dapp/chain/protocol with reliable quantitative
+// evidence (DefiLlama revenue), regardless of size. No market-cap band — the
+// user removed it deliberately so unlisted/no-token protocols (lending markets,
+// staking products, etc.) surface too, not just ones with a liquid token.
+// Qualifies on sustained revenue: a 7-day floor (catches recent activity) AND
+// a 30-day floor (catches one-off spikes that already faded). Every value here
+// is tunable; the panel always reflects whatever is active.
 export const SCREENER = {
-  mcapMin:      15_000_000,   // floor — excludes illiquid micro-caps
-  mcapMax:     750_000_000,   // ceiling — user's stated 5x-plausibility band
-  minRev30d:      100_000,    // qualifies on EITHER protocol revenue ≥ this…
-  minFees30d:     300_000,    // …OR total fees ≥ this, over trailing 30 days
-  maxRows: 60,
+  minRev7d:       1_000,      // 4 figures over the trailing 7 days
+  minRev30d:     10_000,      // 5 figures over the trailing 30 days
+  maxRows: 1000,               // safety ceiling well above current ~580 matches
   cacheMaxAgeMs: 2 * 3600000, // 2h — discovery data, not a live feed
 };

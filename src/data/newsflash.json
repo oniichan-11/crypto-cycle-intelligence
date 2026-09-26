@@ -1,0 +1,88 @@
+{
+  "listUrl": "https://x.com/i/lists/1720474207320969516",
+  "listName": "Crypto Twitter Alpha",
+  "lastCapturedAt": "2026-09-26T12:15:00Z",
+  "entries": [
+    {
+      "id": "2026-09-26-npc-ath",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["NPC"],
+      "theme": "Momentum / new ATH",
+      "summary": "Multiple posts (WIZZ, cevo/Crypthereum) flagging Non-Playable Coin ($NPC) hitting a new all-time high, plus new custom pairs and holder rewards going live on Pump.fun for it.",
+      "sources": [
+        {"handle": "@CryptoWizardd", "url": "https://x.com/CryptoWizardd/status/2103817552329605409"},
+        {"handle": "@NPC_100X", "url": "https://x.com/NPC_100X/status/2103624614878351848"}
+      ]
+    },
+    {
+      "id": "2026-09-26-near-ecosystem-thesis",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["NEAR"],
+      "theme": "Ecosystem thesis",
+      "summary": "Thread (JUMPERZ, reposted by Elisa) arguing the NEAR ecosystem is still early: RHEA (a sub-$20M mcap DEX) and two launchpads both under $5M mcap named as the main plays inside it.",
+      "sources": [
+        {"handle": "@jumperz", "url": "https://x.com/jumperz/status/2103815156807381308"}
+      ]
+    },
+    {
+      "id": "2026-09-26-gram-telegram-thesis",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["GRAM"],
+      "theme": "Bull thesis",
+      "summary": "Bull case for $GRAM (formerly Toncoin) tied to Telegram/Durov involvement, posted alongside a live trading-desk stream discussing setups.",
+      "sources": [
+        {"handle": "@FefeDemeny", "url": "https://x.com/FefeDemeny/status/2103816352926450040"}
+      ]
+    },
+    {
+      "id": "2026-09-26-tao-price-call",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["TAO"],
+      "theme": "Unhedged price call — treat with caution",
+      "summary": "Chart-pattern call targeting \"$400+\" on $TAO with no stated methodology. Flagged, not endorsed — this is the kind of post that needs independent confirmation before it means anything.",
+      "sources": [
+        {"handle": "@CryptoWizardd", "url": "https://x.com/CryptoWizardd/status/2103815432540971159"}
+      ]
+    },
+    {
+      "id": "2026-09-26-btc-price-call",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["BTC"],
+      "theme": "Unhedged price call — treat with caution",
+      "summary": "Post claiming Bitcoin hits $236,000 within 200 days and $596,000 within 300-700 days, no methodology shown. Same caution as above — a naked target, not analysis.",
+      "sources": [
+        {"handle": "@DeFi_Hanzo", "url": "https://x.com/DeFi_Hanzo/status/2103815329269035072"}
+      ]
+    },
+    {
+      "id": "2026-09-26-macro-bond-yields",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": [],
+      "theme": "Macro tangent",
+      "summary": "Post citing the 10Y yield at 5.2% (\"highest since 2007\") and 30Y at 5.5% (\"highest since 2004\"), framed as an under-the-radar risk signal for the bond market. Worth cross-checking against the dashboard's own Macro/DXY tab rather than taking at face value.",
+      "sources": [
+        {"handle": "@fiction_finance", "url": "https://x.com/fiction_finance/status/2103816351676772719"}
+      ]
+    },
+    {
+      "id": "2026-09-26-opg-chart-setup",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["OPG"],
+      "theme": "Chart setup",
+      "summary": "Discord-sourced call-out on $OPG (OpenGradient), poster noted the chart \"looks scammy\" even while sharing the setup — a self-flagged low-conviction mention.",
+      "sources": [
+        {"handle": "@ParadiseXBT_", "url": "https://x.com/ParadiseXBT_/status/2103815006890639687"}
+      ]
+    },
+    {
+      "id": "2026-09-26-dot-mention",
+      "capturedAt": "2026-09-26T12:15:00Z",
+      "tickers": ["DOT"],
+      "theme": "Bare mention",
+      "summary": "Single-line $DOT mention with no elaboration — logged for completeness, not enough context yet to call it a theme.",
+      "sources": [
+        {"handle": "@CryptoNewton", "url": "https://x.com"}
+      ]
+    }
+  ]
+}
