@@ -1,8 +1,29 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-26T12:51:00Z",
+  "lastCapturedAt": "2026-09-26T16:52:00Z",
   "entries": [
+    {
+      "id": "2026-09-26-kaleo-rh-chain-culture-plays",
+      "capturedAt": "2026-09-26T16:52:00Z",
+      "tickers": [],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "K A L E O (@CryptoKaleo, large following, 273 likes/37K views on the opening post) ran a thread saying \"the time for culture plays on Robinhood Chain to start running is coming sooner than you think,\" pledged to update it at new highs, and posted a fresh follow-up just 11 minutes before this capture (\"Looks ready for the next leg up\") -- an actively updating thread, not a one-off. No specific ticker named yet, just RH Chain broadly.",
+      "sources": [
+        {"handle": "@CryptoKaleo", "url": "https://x.com/CryptoKaleo/status/2102216706815127989"},
+        {"handle": "@CryptoKaleo (update)", "url": "https://x.com/CryptoKaleo/status/2103887521533104214"}
+      ]
+    },
+    {
+      "id": "2026-09-26-zcash-ltc-privacy-narrative",
+      "capturedAt": "2026-09-26T16:52:00Z",
+      "tickers": ["LTC"],
+      "theme": "Narrative continuation",
+      "summary": "\"Zcash walked so that LTC could run\" -- a follow-on to the shielded-Bitcoin/Zcash story logged earlier this session, now extending the privacy-coin narrative to Litecoin. Reposted by WIZZ (one of the more-followed accounts on this list). Narrative momentum, not new hard evidence.",
+      "sources": [
+        {"handle": "@HerroCrypto", "url": "https://x.com/HerroCrypto/status/2103852131392610673"}
+      ]
+    },
     {
       "id": "2026-09-26-rh-gov-connections",
       "capturedAt": "2026-09-26T12:51:00Z",
