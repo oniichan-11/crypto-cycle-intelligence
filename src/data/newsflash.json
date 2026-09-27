@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-26T16:52:00Z",
+  "lastCapturedAt": "2026-09-26T17:23:00Z",
   "entries": [
+    {
+      "id": "2026-09-26-algo-wedge-breakout",
+      "capturedAt": "2026-09-26T17:23:00Z",
+      "tickers": ["ALGO"],
+      "theme": "Chart setup",
+      "summary": "$ALGO falling-wedge breakout call with an actual stated methodology (a pattern named a month ago, now claimed to be playing out): targets $0.23 / $0.29 / $0.55, reversal confirmation on a weekly close above $0.13. Unlike the earlier TAO/BTC \"unhedged\" calls, this one names its confirmation condition -- still unverified, but not a naked target.",
+      "sources": [
+        {"handle": "@CryptoFeras", "url": "https://x.com/CryptoFeras/status/2103829963950501892"}
+      ]
+    },
     {
       "id": "2026-09-26-kaleo-rh-chain-culture-plays",
       "capturedAt": "2026-09-26T16:52:00Z",
