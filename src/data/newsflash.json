@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-27T13:26:00Z",
+  "lastCapturedAt": "2026-09-27T15:37:00Z",
   "entries": [
+    {
+      "id": "2026-09-27-rhea-cross-narrative",
+      "capturedAt": "2026-09-27T15:37:00Z",
+      "tickers": ["RHEA"],
+      "theme": "Narrative continuation",
+      "summary": "$RHEA (the sub-$20M-mcap NEAR-ecosystem DEX first flagged in the earliest NEAR thesis logged on this dashboard) now framed by the same poster as sitting at the intersection of the NEAR and privacy-coin (\"zec\") ecosystems while staying EVM-accessible -- \"the easiest thing to buy in zec/near eco.\" Same account also noted the position has been paying off for a month after almost selling too early. First time RHEA itself (not just NEAR broadly) is tracked as its own ticker here, and it now ties together two narrative threads this dashboard has been following independently (NEAR ecosystem + privacy-coin momentum).",
+      "sources": [
+        {"handle": "@0xJvvs", "url": "https://x.com/0xJvvs/status/2104230545643483264"}
+      ]
+    },
     {
       "id": "2026-09-27-xmr-zec-pairs-trade",
       "capturedAt": "2026-09-27T13:26:00Z",
