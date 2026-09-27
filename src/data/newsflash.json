@@ -1,8 +1,29 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-26T17:23:00Z",
+  "lastCapturedAt": "2026-09-27T12:38:00Z",
   "entries": [
+    {
+      "id": "2026-09-27-near-etf-bitwise",
+      "capturedAt": "2026-09-27T12:38:00Z",
+      "tickers": ["NEAR"],
+      "theme": "Notable claim — unverified",
+      "summary": "Claim that a Bitwise $NEAR ETF starts trading Tuesday, with a stated \"base case\" price target of $155/NEAR (~30x from current levels). The ETF launch date is a specific, checkable claim; the $155 target has no stated derivation and should be treated as speculative. Directly relevant -- NEAR already shows real revenue in this dashboard's own Screener.",
+      "sources": [
+        {"handle": "@KadunaBull", "url": "https://x.com/KadunaBull/status/2104186212319719750"}
+      ]
+    },
+    {
+      "id": "2026-09-27-rh-conference-catalyst",
+      "capturedAt": "2026-09-27T12:38:00Z",
+      "tickers": [],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "Dated catalyst: the RobinHood Conference is 2 days out, with posters flagging interest in \"RH majors\" heading into it. Continues the RH Chain culture-plays thread logged previously, now with a concrete near-term date rather than just open-ended narrative.",
+      "sources": [
+        {"handle": "@zeroxkyle", "url": "https://x.com/zeroxkyle/status/2104188287078592944"},
+        {"handle": "@Gold_Cryptoz", "url": "https://x.com"}
+      ]
+    },
     {
       "id": "2026-09-26-algo-wedge-breakout",
       "capturedAt": "2026-09-26T17:23:00Z",
