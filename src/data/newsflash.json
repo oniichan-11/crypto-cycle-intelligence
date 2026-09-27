@@ -1,8 +1,28 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-27T12:38:00Z",
+  "lastCapturedAt": "2026-09-27T13:26:00Z",
   "entries": [
+    {
+      "id": "2026-09-27-xmr-zec-pairs-trade",
+      "capturedAt": "2026-09-27T13:26:00Z",
+      "tickers": ["XMR", "ZEC"],
+      "theme": "Narrative continuation",
+      "summary": "An explicit pairs-trade thesis this time, not just narrative: long $XMR / short $ZEC, framed as \"$XMRZEC,\" on the reasoning that Bitcoin+Monero are complementary (BTC for base liquidity, XMR for mandatory default privacy) while Zcash's privacy is optional/lower-adoption. Grok's reply backed the reasoning. Extends the shielded-BTC/Zcash/LTC privacy-coin thread logged over the past two cycles -- now with an actual trade structure attached, which is exactly the kind of \"confluence\" you described wanting to see.",
+      "sources": [
+        {"handle": "@trader1sz", "url": "https://x.com/trader1sz/status/2104199548046311794"}
+      ]
+    },
+    {
+      "id": "2026-09-27-sui-breakout-basecamp",
+      "capturedAt": "2026-09-27T13:26:00Z",
+      "tickers": ["SUI"],
+      "theme": "Chart setup",
+      "summary": "K A L E O flagging $SUI up 50% over the past week, framed as the market \"front-running SUI Basecamp\" (an upcoming event), following up on his own Sep 18 breakout call. The 50% weekly move is a checkable, specific claim rather than vague sentiment -- worth verifying against the dashboard's own Sectors data.",
+      "sources": [
+        {"handle": "@CryptoKaleo", "url": "https://x.com/CryptoKaleo/status/2104200105247265199"}
+      ]
+    },
     {
       "id": "2026-09-27-near-etf-bitwise",
       "capturedAt": "2026-09-27T12:38:00Z",
