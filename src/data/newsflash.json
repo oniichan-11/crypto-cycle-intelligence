@@ -1,8 +1,39 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-27T21:23:00Z",
+  "lastCapturedAt": "2026-09-28T18:07:00Z",
   "entries": [
+    {
+      "id": "2026-09-28-iran-sanctions-btc-macro",
+      "capturedAt": "2026-09-28T18:07:00Z",
+      "tickers": ["BTC"],
+      "theme": "Macro tangent",
+      "summary": "Claim (sourced to Axios per the poster) that Trump is ready to ease sanctions and unfreeze Iranian assets if Iran meets nuclear demands, posted alongside BTC hitting $84,000 and a speculative causal chain: peace -> cheap oil -> low inflation -> no Fed hike -> bull market. The sanctions claim has a real external citation, unlike most items logged here; the causal chain to \"bull market\" is the poster's own reasoning, not sourced. Worth cross-checking against the dashboard's own Macro/DXY tab rather than taking the market-impact framing at face value.",
+      "sources": [
+        {"handle": "@fiction_finance", "url": "https://x.com/fiction_finance/status/2104616886310928429"}
+      ]
+    },
+    {
+      "id": "2026-09-28-rh-chain-wallet-growth",
+      "capturedAt": "2026-09-28T18:07:00Z",
+      "tickers": [],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "Real on-chain figure: Robinhood Chain recorded 149,485 active wallets in 24 hours, reportedly still climbing. K A L E O read this as building toward a breakout \"after the Robinhood Summit this week\" -- likely the same event flagged as \"2 days out\" in the earlier RH Chain conference-catalyst entry, now imminent. This is the first entry in the RH Chain thread with an actual on-chain metric behind it rather than pure narrative.",
+      "sources": [
+        {"handle": "@CryptoKaleo", "url": "https://x.com/CryptoKaleo/status/2104633084977234243"},
+        {"handle": "@Drallio", "url": "https://x.com/Drallio/status/2104568559640699321"}
+      ]
+    },
+    {
+      "id": "2026-09-28-strcx-yield-arb",
+      "capturedAt": "2026-09-28T18:07:00Z",
+      "tickers": ["STRCx"],
+      "theme": "Chart setup",
+      "summary": "A specific, well-specified yield-arbitrage setup, not just a thesis: $STRCx implied yield is 28.47% (49d) via Exponent Finance vs. 20.48% (58d) via Pendle, both carrying 2x xStocks points, expiries similar -- the poster's read is ~40% more points achievable by arbing the rate spread between the two venues. More mechanically concrete than most entries logged here (named protocols, real numbers, a clear structure), though unverified independently.",
+      "sources": [
+        {"handle": "@phtevenstrong", "url": "https://x.com/phtevenstrong/status/2104629803781693588"}
+      ]
+    },
     {
       "id": "2026-09-27-near-profit-taking",
       "capturedAt": "2026-09-27T21:23:00Z",
