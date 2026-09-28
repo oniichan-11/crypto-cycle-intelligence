@@ -1,8 +1,29 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-27T15:37:00Z",
+  "lastCapturedAt": "2026-09-27T21:23:00Z",
   "entries": [
+    {
+      "id": "2026-09-27-near-profit-taking",
+      "capturedAt": "2026-09-27T21:23:00Z",
+      "tickers": ["NEAR"],
+      "theme": "Narrative continuation",
+      "summary": "A trader running a live $NEAR long (part of a livestream series covering BTC/SOL/ETH/NEAR/TAO/XRP) posted locking in 3/4 of profits with stops trailed up -- de-risking after the run this dashboard has been tracking (ETF launch claim, RHEA cross-narrative). Same poster followed with a lighthearted reaffirmation of the broader NEAR thesis (\"boromir, faramir, nearmir\"). Read together: still bullish long-term, but active position-trimming after a big move is itself a signal worth having alongside the purely bullish threads.",
+      "sources": [
+        {"handle": "@trader1sz", "url": "https://x.com/trader1sz/status/2104315511899037972"}
+      ]
+    },
+    {
+      "id": "2026-09-27-zec-oi-surge",
+      "capturedAt": "2026-09-27T21:23:00Z",
+      "tickers": ["ZEC"],
+      "theme": "Notable claim — unverified",
+      "summary": "Specific, checkable claim: ZEC open interest is up 68% in 14 days, with \"leverage piling in fast across alts.\" Framed with an explicit warning by the reposting account: \"pile up in leverage is when sharks wake up for easy prey\" -- i.e. a reversal/liquidation-risk read, not a bullish one. Extends the privacy-coin thread (shielded BTC, Zcash/LTC, XMR/ZEC pairs trade) tracked across the last several cycles, but this is the first entry in that thread framed as a caution rather than a thesis.",
+      "sources": [
+        {"handle": "@trader1sz", "url": "https://x.com/trader1sz/status/2104320154272403589"},
+        {"handle": "@harleyfoote_", "url": "https://x.com/harleyfoote_/status/2104211741936697536"}
+      ]
+    },
     {
       "id": "2026-09-27-rhea-cross-narrative",
       "capturedAt": "2026-09-27T15:37:00Z",
