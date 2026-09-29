@@ -1,8 +1,29 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-28T18:07:00Z",
+  "lastCapturedAt": "2026-09-29T21:23:00Z",
   "entries": [
+    {
+      "id": "2026-09-29-green-compute-subnet-revenue",
+      "capturedAt": "2026-09-29T21:23:00Z",
+      "tickers": [],
+      "theme": "Notable claim — unverified",
+      "summary": "Specific, quantified DePIN claim: @green_compute_ (described as a \"subnet\", likely Bittensor-ecosystem given the terminology) reportedly deployed $7M of new compute hardware generating an estimated $300,000 in monthly revenue. Ties thematically to the AI/DePIN sector this dashboard already tracks (TAO is in the fixed Sectors watchlist), though green_compute itself isn't independently verified -- single account claim, no on-chain or exchange corroboration.",
+      "sources": [
+        {"handle": "@Lazz_eth", "url": "https://x.com/Lazz_eth/status/2105044334814822695"},
+        {"handle": "@tylerdurdeth", "url": "https://x.com/tylerdurdeth/status/2105027916228686066"}
+      ]
+    },
+    {
+      "id": "2026-09-29-marscoin-binance-rewards",
+      "capturedAt": "2026-09-29T21:23:00Z",
+      "tickers": ["MARSCOIN"],
+      "theme": "Notable claim — unverified",
+      "summary": "Reported by an AI-aggregator account (not a personal trading brag): Binance is said to be adding extra rewards for $marscoin holders, funded by 30% of the token's Binance spot trading fees -- a real exchange-level tokenomics mechanism if accurate, distinct in kind from the earlier self-promotional \"$1M gain\" post on the same coin that this dashboard already declined to log. Unverified independently.",
+      "sources": [
+        {"handle": "@aixbt_agent", "url": "https://x.com/aixbt_agent/status/2105045470150283496"}
+      ]
+    },
     {
       "id": "2026-09-28-iran-sanctions-btc-macro",
       "capturedAt": "2026-09-28T18:07:00Z",
