@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-30T02:51:12Z",
+  "lastCapturedAt": "2026-09-30T20:20:36Z",
   "entries": [
+    {
+      "id": "2026-09-30-jumper-jump-fee-economics",
+      "capturedAt": "2026-09-30T20:20:36Z",
+      "tickers": ["JUMP"],
+      "theme": "Notable claim — unverified",
+      "summary": "@thedefiedge ran the actual fee math on Jumper (the bridge/swap aggregator) ahead of its upcoming $JUMP token launch: despite $38B+ headline lifetime volume, last month was ~$808M bridge volume + $159M swaps, but fees are razor-thin (0%-0.05% depending on route), working out to roughly $1M-$6M/year annualized -- a fraction of what the volume number implies. Also gave the token's allocation split (33.33% community / 26.07% investors / 14.7% team / 21.9% treasury / 4% public) and flagged the open question as how much of the community slice is liquid at launch. Self-hedged by the author (\"probably off on some of the math\", explicitly not a buy call) and not independently verified here, but it's exactly the revenue-vs-narrative scrutiny this dashboard's own Screener applies -- worth watching if $JUMP lands in the revenue screener post-launch.",
+      "sources": [
+        {"handle": "@thedefiedge", "url": "https://x.com/thedefiedge/status/2105139586791805397"}
+      ]
+    },
     {
       "id": "2026-09-30-kshaped-market-hype-thesis",
       "capturedAt": "2026-09-30T02:51:12Z",
