@@ -1,8 +1,29 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-29T21:23:00Z",
+  "lastCapturedAt": "2026-09-30T02:51:12Z",
   "entries": [
+    {
+      "id": "2026-09-30-kshaped-market-hype-thesis",
+      "capturedAt": "2026-09-30T02:51:12Z",
+      "tickers": ["HYPE"],
+      "theme": "Bull thesis",
+      "summary": "@zeroxkyle (amplifying @tulipking's conference presentation) argues crypto is becoming \"K-shaped\": capital increasingly concentrates in protocols with real, growing fundamentals -- naming HYPE (Hyperliquid) as the clearest example -- while speculative on-chain plays get harder to pick as AI-assisted token creation scales scam/noise volume faster than genuine projects. Framed as a structural, multi-cycle rotation thesis rather than a single trade call. Notable mainly because it's an explicit articulation of the same revenue-over-narrative logic this dashboard's own Screener is built around, from an account with real reach (~5K views, 52 likes).",
+      "sources": [
+        {"handle": "@zeroxkyle", "url": "https://x.com/zeroxkyle/status/2105107717694345660"}
+      ]
+    },
+    {
+      "id": "2026-09-30-robinhood-perps-bitstamp-pons",
+      "capturedAt": "2026-09-30T02:51:12Z",
+      "tickers": ["PONS"],
+      "theme": "Notable claim — unverified",
+      "summary": "Robinhood's summit continued today; @zoomerfied (a fast-news aggregator account -- some of its posts are labeled paid partnerships, this one was not) posted that Robinhood will offer perpetuals in-app using Bitstamp, sourced to a press release. A concrete product expansion for the RH ecosystem if accurate, but not independently confirmed in this pass -- no link to the release itself, just the claim, so treat as reported-not-verified. Separately and unrelated in substance, @CryptoKaleo flagged $PONS (an RH-chain-linked token) as back to its August 5th price level with a possible bottom forming -- a chart read, not a fundamental claim, weighted separately from the perps claim above. @0xWives also referenced \"Star Trek bit digging at Base\" during the summit, confirming the event is live but adding no further checkable detail.",
+      "sources": [
+        {"handle": "@zoomerfied", "url": "https://x.com/zoomerfied/status/2105074440426205616"},
+        {"handle": "@CryptoKaleo", "url": "https://x.com/CryptoKaleo/status/2105127761132274100"}
+      ]
+    },
     {
       "id": "2026-09-29-green-compute-subnet-revenue",
       "capturedAt": "2026-09-29T21:23:00Z",
