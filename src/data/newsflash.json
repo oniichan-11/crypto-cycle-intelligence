@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T11:23:52Z",
+  "lastCapturedAt": "2026-10-01T17:24:42Z",
   "entries": [
+    {
+      "id": "2026-10-01-bstonk-revenue-teardown",
+      "capturedAt": "2026-10-01T17:24:42Z",
+      "tickers": ["BSTONK"],
+      "theme": "Notable claim — unverified",
+      "summary": "@the_smart_ape published a detailed, numbers-heavy teardown of BaseStonk's own valuation dashboard, which claims $bstonk would be worth $322M at Virtuals' fee-ratio (it trades at ~$2M). His findings: the 30-day fee figure is skewed by a single day (Sep 3 = 22% of all-time fees; at the last-7-day pace, 30-day fees would run 2.9x lower); ~46% of lifetime volume is the token taxing its own trading, not external platform revenue; the much-touted token burn is mostly a launch-day artifact (56% burned in the first 48h when the token was 4-5x cheaper); and the burn accounting doesn't reconcile with claimed revenue (~half the 'buyback & burn' money hasn't hit the dead address). Also notes weekly volume is down 83% and platform revenue down 90% from recent peaks. He does credit what holds up: real USDC dividends paid ($46.4K) and a Dune dashboard cross-checked against DeFiLlama. Not independently re-verified here, but it's exactly the revenue-vs-narrative scrutiny this dashboard's own Screener applies, aimed at a token that's come up in this feed before (TAO x BaseStonk partnership, an earlier skipped price-call post).",
+      "sources": [
+        {"handle": "@the_smart_ape", "url": "https://x.com/the_smart_ape/status/2105674258932543742"}
+      ]
+    },
     {
       "id": "2026-10-01-q3-losers-defiignas",
       "capturedAt": "2026-10-01T11:23:52Z",
