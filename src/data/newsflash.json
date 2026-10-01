@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T01:47:28Z",
+  "lastCapturedAt": "2026-10-01T02:24:43Z",
   "entries": [
+    {
+      "id": "2026-10-01-libra-m3m3-rico-dismissal",
+      "capturedAt": "2026-10-01T02:24:43Z",
+      "tickers": ["LIBRA", "M3M3"],
+      "theme": "Notable claim — unverified",
+      "summary": "@GivnerAriel (a practicing fintech/crypto lawyer, counsel to MonkeDAO) reported that SDNY Judge Rochon dismissed the entire $LIBRA / $M3M3 class action with prejudice via an 81-page opinion -- the case tied to the Dec 2024 $M3M3 launch and the Feb 2025 $LIBRA token linked to Javier Milei's \"Viva La Libertad\" post. Per the summary: Meteora (the Solana DEX) was found not to be a suable \"unincorporated association\" and all claims against it were dropped, RICO claims failed on continuity grounds (a ~6-7 month memecoin pattern doesn't meet the bar), fraud claims against Ben Chow failed under Rule 9(b) scienter pleading standards, and Kelsier was dropped for lack of jurisdiction once RICO fell away. Leave to amend was denied as futile. If accurate, this is a meaningful precedent limiting RICO/fraud liability for DEXs and launch-adjacent parties in viral memecoin blowups -- not independently verified against the actual court opinion in this pass, but the source has real legal credentials and the analysis is specific enough (named judge, claim-by-claim reasoning) to flag rather than dismiss as hype.",
+      "sources": [
+        {"handle": "@GivnerAriel", "url": "https://x.com/GivnerAriel/status/2105479268645900681"}
+      ]
+    },
     {
       "id": "2026-10-01-orbio-rh-chain-volume",
       "capturedAt": "2026-10-01T01:47:28Z",
