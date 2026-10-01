@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T17:24:42Z",
+  "lastCapturedAt": "2026-10-01T20:03:13Z",
   "entries": [
+    {
+      "id": "2026-10-01-zec-shielded-usability-critique",
+      "capturedAt": "2026-10-01T20:03:13Z",
+      "tickers": ["ZEC"],
+      "theme": "Notable claim — unverified",
+      "summary": "@DeFi_Dad (a well-known, credible DeFi educator) laid out a structural usability critique of ZEC's 'private money' narrative: to use shielded ZEC in DeFi you must unshield it first (breaking privacy); most CEXs only handle transparent ZEC, so buying/acquiring it links your identity via the exchange before you ever shield it; and almost nowhere accepts shielded ZEC directly, so spending it practically requires unshielding too. His conclusion: you can store value indefinitely in shielded ZEC, but the acquisition and spending paths both tend to expose you -- 'superior private money... just money I can't use.' High engagement (72 replies, 132 likes, 15.7K views) and a real counterweight to the privacy-narrative framing that's been circulating around ZEC in this feed (chart comparisons, mean-reversion calls). Not independently fact-checked here, but it's a structural/technical argument, not a price call, and worth weighing against the bullish ZEC chatter.",
+      "sources": [
+        {"handle": "@DeFi_Dad", "url": "https://x.com/DeFi_Dad/status/2105719600436445489"}
+      ]
+    },
     {
       "id": "2026-10-01-bstonk-revenue-teardown",
       "capturedAt": "2026-10-01T17:24:42Z",
