@@ -1,8 +1,19 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T02:24:43Z",
+  "lastCapturedAt": "2026-10-01T10:18:06Z",
   "entries": [
+    {
+      "id": "2026-10-01-robinhood-ai-trading-agents",
+      "capturedAt": "2026-10-01T10:18:06Z",
+      "tickers": [],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "@coinbureau (credible, 59K+ views on the original post) reported Robinhood launched AI agents that research markets 24/7, build strategies, and trade on the user's behalf -- a significant product move if accurate, and plausibly one of the actual Summit Day 2 announcements given timing. First reported ~1 day before this capture (Sep 30, 5:39am) and only caught now via @milesdeutscher amplifying it this cycle, so flagging the lag rather than treating it as brand-new. Continues the same RH ecosystem thread as the earlier PONS/perps-Bitstamp/ORBIO entries -- an AI-agent trading feature inside Robinhood's app is a plausible tailwind for RH-chain-linked tokens, though that's inference on my part, not stated in the source.",
+      "sources": [
+        {"handle": "@coinbureau", "url": "https://x.com/coinbureau/status/2105170688374149480"},
+        {"handle": "@milesdeutscher", "url": "https://x.com/milesdeutscher/status/2105598598016815434"}
+      ]
+    },
     {
       "id": "2026-10-01-libra-m3m3-rico-dismissal",
       "capturedAt": "2026-10-01T02:24:43Z",
