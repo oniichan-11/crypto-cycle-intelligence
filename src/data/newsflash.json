@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T10:18:06Z",
+  "lastCapturedAt": "2026-10-01T11:23:52Z",
   "entries": [
+    {
+      "id": "2026-10-01-q3-losers-defiignas",
+      "capturedAt": "2026-10-01T11:23:52Z",
+      "tickers": ["KAITO", "JTO", "BONK", "XPL"],
+      "theme": "Notable claim — unverified",
+      "summary": "@DefiIgnas (a recurring, credible source in this feed) posted a Q3 'losers' recap reacting to Ansem's Q3 returns chart. Specifics: $KAITO underperformed despite shipping Kaito Pulse and Aura points; $JTO (Jito) didn't get the lift expected from JTO perps; $BONK is losing share to pump.fun/Stonk/Pons and was reportedly delisted from Upbit (a concrete, checkable exchange-delisting claim, not independently verified here); $XPL is underperforming BTC even while nominally 'green,' with Ignas questioning whether it's a revenue problem or unlock pressure. The XPL framing -- is the underperformance a fundamentals issue or a supply-unlock issue -- is directly the kind of question this dashboard's revenue screener is built to help answer.",
+      "sources": [
+        {"handle": "@DefiIgnas", "url": "https://x.com/DefiIgnas/status/2105616176088846519"}
+      ]
+    },
     {
       "id": "2026-10-01-robinhood-ai-trading-agents",
       "capturedAt": "2026-10-01T10:18:06Z",
