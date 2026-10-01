@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-09-30T20:20:36Z",
+  "lastCapturedAt": "2026-10-01T01:47:28Z",
   "entries": [
+    {
+      "id": "2026-10-01-orbio-rh-chain-volume",
+      "capturedAt": "2026-10-01T01:47:28Z",
+      "tickers": ["ORBIO"],
+      "theme": "Narrative / RH Chain ecosystem",
+      "summary": "@0xWives flagged $ORBIO -- an AI inference marketplace token (Orbio.so) on the RH chain -- for record trading volume today, up +36.3% to $0.089. Continues the same RH-ecosystem thread as the earlier $PONS and Robinhood perps/Bitstamp entries, and the Summit itself is now on Day 2 per @CryptoKaleo. Thin single-source signal (739 views, 4 likes) so weighted as a confluence point rather than a standalone call -- the price move itself is checkable, the \"record volume\" framing is not independently verified here.",
+      "sources": [
+        {"handle": "@0xWives", "url": "https://x.com/0xWives/status/2105468897893711887"}
+      ]
+    },
     {
       "id": "2026-09-30-jumper-jump-fee-economics",
       "capturedAt": "2026-09-30T20:20:36Z",
