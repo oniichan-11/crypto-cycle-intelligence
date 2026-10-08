@@ -1,8 +1,19 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-08T07:13:53Z",
+  "lastCapturedAt": "2026-10-08T23:36:06Z",
   "entries": [
+    {
+      "id": "2026-10-08-tulipking-top300-divergence",
+      "capturedAt": "2026-10-08T23:36:06Z",
+      "tickers": ["HYPE"],
+      "theme": "Narrative continuation",
+      "summary": "@tulipking posted a chart of performance for the top ~300 coins from the 10/10 highs to today, calling it an \"absolute bloodbath\" with a few bright spots, and concluding that good coins are separating from the broad market on the strength of their fundamentals -- \"buy and hold good coins, now is finally the time.\" Continues the fundamentals-versus-narrative thread from the earlier K-shaped-market entry (same author's framing). A direct dissent came from @JamesChristoph in the replies: HYPE is a reflexive asset whose capital is still almost entirely internal to crypto, TradFi money isn't coming soon, and if BTC sold off to $50K he'd expect HYPE below $40. @DeFiMinty amplified the concentration idea (most people are better off holding 2-5 leading coins). The chart's contents could not be read in this pass, so which coins are the 'bright spots' is not captured here, and the buy-now conclusion is opinion rather than data.",
+      "sources": [
+        {"handle": "@tulipking", "url": "https://x.com/tulipking/status/2108281879225123205"},
+        {"handle": "@DeFiMinty", "url": "https://x.com/DeFiMinty/status/2108340089281532262"}
+      ]
+    },
     {
       "id": "2026-10-08-samsung-wallet-usdc",
       "capturedAt": "2026-10-08T07:13:53Z",
