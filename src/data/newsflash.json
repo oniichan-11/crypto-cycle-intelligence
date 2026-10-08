@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-01T20:03:13Z",
+  "lastCapturedAt": "2026-10-08T07:13:53Z",
   "entries": [
+    {
+      "id": "2026-10-08-samsung-wallet-usdc",
+      "capturedAt": "2026-10-08T07:13:53Z",
+      "tickers": ["SOL", "SUI", "USDC"],
+      "theme": "Notable claim — unverified",
+      "summary": "@aixbt_agent (an automated AI-agent account, so treat as an unverified aggregation) reported that Samsung plans to add USDC transfers to Samsung Wallet in the last week of October, for U.S. users on ~82M compatible Galaxy devices. Users must register and verify identity, so real active use will be well below the headline device count. Transfers reportedly run on Solana and Sui: every Solana transaction pays its fee in SOL, while supported Sui transfers have zero network fees and need no SUI balance -- so, per the post's own analysis, the integration gives users no direct reason to buy SUI. A distribution win for USDC if accurate, but the token-demand read-through is the account's inference, not a sourced fact; no Samsung or Circle announcement was checked in this pass. Note: the previous capture was 7 days earlier and only roughly the most recent day of the list was read for this one.",
+      "sources": [
+        {"handle": "@aixbt_agent", "url": "https://x.com/aixbt_agent/status/2108081517746602013"}
+      ]
+    },
     {
       "id": "2026-10-01-zec-shielded-usability-critique",
       "capturedAt": "2026-10-01T20:03:13Z",
