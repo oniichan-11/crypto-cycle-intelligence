@@ -1,8 +1,18 @@
 {
   "listUrl": "https://x.com/i/lists/1720474207320969516",
   "listName": "Crypto Twitter Alpha",
-  "lastCapturedAt": "2026-10-08T23:36:06Z",
+  "lastCapturedAt": "2026-10-10T09:04:19Z",
   "entries": [
+    {
+      "id": "2026-10-10-pendle-citrini-second-order-rwa",
+      "capturedAt": "2026-10-10T09:04:19Z",
+      "tickers": ["PENDLE"],
+      "theme": "Narrative continuation",
+      "summary": "@pendle_fi (the protocol's own account, so a self-interested amplification) relayed that Citrini named $PENDLE a \"second-order RWA trade\" on Wall Street's move onchain, citing its role as the interest-rate market for tokenized assets (posted Oct 9, ~21.6K views, 224 likes). Ties to the RWA narrative already in this feed (e.g. the earlier AUSD maturity listing on Pendle). The underlying Citrini note was not read, so the attribution is second-hand and the framing is unverified; the thesis worth checking against the Screener is whether Pendle's fee/revenue trend actually tracks growth in tokenized-asset yield markets, rather than the endorsement itself.",
+      "sources": [
+        {"handle": "@pendle_fi", "url": "https://x.com/pendle_fi/status/2108398574556033233"}
+      ]
+    },
     {
       "id": "2026-10-08-tulipking-top300-divergence",
       "capturedAt": "2026-10-08T23:36:06Z",
